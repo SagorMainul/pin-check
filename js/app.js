@@ -52,12 +52,14 @@ document.getElementById('verify-pin').addEventListener('click', function () {
 
   const typedNumbersField = document.getElementById('typed-numbers')
   const typedNumber = typedNumbersField.value
+  const pinSucessMessage = document.getElementById('pin-success')
+  const pinFailedMessage = document.getElementById('pin-fail')
 
   if (currentPin === typedNumber) {
-    const pinSucessMessage = document.getElementById('pin-success')
     pinSucessMessage.style.display = 'block'
+    pinFailedMessage.style.display = 'none'
   } else {
-    const pinFailedMessage = document.getElementById('pin-fail')
     pinFailedMessage.style.display = 'block'
+    pinSucessMessage.style.display = 'none'
   }
 })
